@@ -1,0 +1,524 @@
+[
+   {
+      "title": "The Man Who Fell to Earth",
+      "director": "Nicolas Roeg",
+      "time": "5:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=TbgcLFj9k0U&ab_channel=JoBloMovieTrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149345/",
+         "info": "https://studios.wearebraindead.com/screening/149229"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21102137/MV5BOTVhM2JhZDAtYWMwMS00NjE5LWI5ZTEtNDQxZmIxMzIxYzVlXkEyXkFqcGdeQXVyNjc1NTYyMjg%40._V1_.jpg",
+      "description": "He’s an alien on Earth but he’s a dream in our hearts. I think it’s wild that he lived on cocaine, milk and peppers through the ’70s, but boy did he look great on that diet! Happy birthday Bowie!\n",
+      "date": {
+         "day": 1,
+         "month": 8,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Inherent Vice",
+      "director": "Paul Thomas Anderson",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=wZfs22E7JmI&ab_channel=WarnerBros.Pictures",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149346/",
+         "info": "https://studios.wearebraindead.com/screening/149226"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21101704/MV5BOTVhMjA0OWEtNzY4MS00YWY0LThlOWYtOWNkYjUwMzE5NDYwXkEyXkFqcGdeQXVyODE5NzE3OTE%40._V1_.jpg",
+      "description": "It’s PTA doing the shaggiest dog detective story of all time. Remember when Josh Brolin gave a blowjob to that banana? Good times, good times.\n",
+      "date": {
+         "day": 1,
+         "month": 8,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Leningrad Cowboys Go America",
+      "director": "Aki Kaurismäki",
+      "time": "4:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=UckcOxu8Nw4&ab_channel=TheVideodrome76",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149348/",
+         "info": "https://studios.wearebraindead.com/screening/149239"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21103756/leningrad-cowboys-go-america-18612-movieposter.1902.jpg",
+      "description": "The greatest Rock ‘n’ Roll road movie of all time finds Siberian psychos/fashionistas, The Leningrad Cowboys, drinking beers and touring  across the U.S.A. – a rollicking good time, enjoy!\n",
+      "date": {
+         "day": 1,
+         "month": 9,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Slacker",
+      "director": "Richard Linklater",
+      "time": "6:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=KlmfRuXxuXo&ab_channel=MovieclipsClassicTrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149349/",
+         "info": "https://studios.wearebraindead.com/screening/149232"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21102557/Slacker_onesheet_USA-1.jpg",
+      "description": "Spend a day walking around Austin, TX and peeping in on the local yazoos. You ever play GTA and just abide the laws and drive around listening to the radio? Linklater is maybe the one American filmmaker who appreciates the flow of time, I tell you whut.\n",
+      "date": {
+         "day": 1,
+         "month": 9,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "After Hours",
+      "director": "Martin Scorsese",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=OZzb_6LtMjY&ab_channel=MovieclipsClassicTrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149347/",
+         "info": "https://studios.wearebraindead.com/screening/149236"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21103103/71LAMdb2IjL._AC_SL1500_.jpg",
+      "description": "It’s the worst night of Griffin Dunne’s life in Marty Scorsese’s coke-fueled rampage through Soho. Excellent graffiti and paperweights in this one. Bada bing, bada boom.\n",
+      "date": {
+         "day": 1,
+         "month": 9,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Fellini Satyricon",
+      "director": "Federico Fellini",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=8i9Z7r8dAFo&ab_channel=HDRetroTrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149350/",
+         "info": "https://studios.wearebraindead.com/screening/149242"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21104440/5528c426b217cce5c6f54a7070ae8979.jpg",
+      "description": "100% madness in Fellini’s take on ancient Rome. The craziest sets ever built, scenes of pure chaos and all the Fellini staples you know and love (i.e. tits, circus stuff, dream logic).\n",
+      "date": {
+         "day": 1,
+         "month": 12,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Paris, Texas",
+      "director": "Wim Wenders",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=61IZNZqXmE8&ab_channel=TheNightlightCinema",
+         "tickets": "https://tickets.wearebraindead.com/purchase/152813/",
+         "info": "https://studios.wearebraindead.com/screening/149212"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21094447/MV5BM2RjMmU3ZWItYzBlMy00ZmJkLWE5YzgtNTVkODdhOWM3NGZhXkEyXkFqcGdeQXVyNDA5Mjg5MjA%40._V1_.jpg",
+      "description": "Our boy Harry Dean Stanton walks out of the desert wearing a suit and baseball cap a.k.a. the greatest outfit of all time. It’s all very sad as he pieces his shitty life back together, and very poignant too.  A perfect soundtrack and a great way to kick off the year with a good old cry.\n",
+      "date": {
+         "day": 1,
+         "month": 13,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Natural Born Killers",
+      "director": "Oliver Stone",
+      "time": "7:30PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=XpLKNclOtLg&ab_channel=MovieclipsClassicTrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149351/",
+         "info": "https://studios.wearebraindead.com/screening/149245"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21104919/51lAdmznIHL.jpg",
+      "description": "Oh boy, this is one SPICY meatball. Mickey and Mallory go killing across this great land and it’s total fucking carnage. Don’t say we didn’t warn ya.\n",
+      "date": {
+         "day": 1,
+         "month": 15,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Enter the Void",
+      "director": "Gaspar Noé",
+      "time": "10:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=JJkPLYmUyzg&ab_channel=crzymalu",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149352/",
+         "info": "https://studios.wearebraindead.com/screening/149248"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21105305/eb95cb114a3d554c7d766cf0aeb3e900.jpg",
+      "description": "Cinema’s finest credit sequence leads into a psychedelic punch in the face as we get fucked up, die and float above Tokyo and in and out of life. Gaspar Noe, what are you doing to us?!\n",
+      "date": {
+         "day": 1,
+         "month": 15,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Sans Soleil",
+      "director": "Chris Marker",
+      "time": "6:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=0K8j3MU9dw4&ab_channel=FrantzDuncombe",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149363/",
+         "info": "https://studios.wearebraindead.com/screening/149251"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21105743/Sans-Soleil.jpg",
+      "description": "A film like no other… I don’t even know where to start really. Here’s Wikipedia to try to explain:\nIt is a meditation on the nature of human memory, showing the inability to recall the context and nuances of memory, and how, as a result, the perception of personal and global histories is affected.\nFar out, man.\n",
+      "date": {
+         "day": 1,
+         "month": 16,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "The Straight Story",
+      "director": "David Lynch",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=e0zb_baTzkk&ab_channel=r0l00L",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149355/",
+         "info": "https://studios.wearebraindead.com/screening/149261"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21112225/The-Straight-Story-Vintage-Movie-Poster-Original-Japanese-1-panel-20x29-1.jpg",
+      "description": "Lynch made a DISNEY movie and we aren’t still talking about how wild that is?? Good-hearted Rich Farnsworth (the most huggable man of all time) rides his lawnmower over to see his brother one last time. Sweet, simple and (mostly) straight.\n",
+      "date": {
+         "day": 1,
+         "month": 16,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Céline and Julie Go Boating",
+      "director": "Jacques Rivette",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=ohHHsbXd8kY&ab_channel=Bandes-annoncesChacunChercheSonFilm",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149364/",
+         "info": "https://studios.wearebraindead.com/screening/149271"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21112816/Ce%CC%81line-Julie-poster.jpg",
+      "description": "Jacques Rivette goes out of his mind and takes us into parallel realities in this epic, hallucinatory trip about two gals, magic and Parisian livin’ and lovin’. Lose your mind, you’ll be fine, it’s already mid-January!\n",
+      "date": {
+         "day": 1,
+         "month": 19,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Koyaanisqatsi",
+      "director": "Godfrey Reggio",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=1jM2WA2WbDc&ab_channel=LeCinephobe",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149365/",
+         "info": "https://studios.wearebraindead.com/screening/149274"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21113436/81yUxvbr8fL._AC_SL1367_.jpg",
+      "description": "A mesmerising trip through modern life on Earth with spellbinding visuals and music by Philip Glass. I’m “not” recommending you be high to watch this.\n",
+      "date": {
+         "day": 1,
+         "month": 20,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "A.I. Artificial Intelligence",
+      "director": "Steven Spielberg",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=pm7qlQ2E0iE&ab_channel=MovieclipsClassicTrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149366/",
+         "info": "https://studios.wearebraindead.com/screening/149277"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21114111/kYaDYYt.jpg",
+      "description": "Spielberg made a Kubrick movie in this deeply weird under-appreciated gem. Haley Joel Osment is a sad little robot boy on a big journey to find his mummy. He hangs out with a robot teddy bear and sex slave Jude Law, and then lives for 1000 years.\n",
+      "date": {
+         "day": 1,
+         "month": 21,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Ikiru",
+      "director": "Akira Kurosawa",
+      "time": "5:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=2VeLN3IDjzQ&ab_channel=JapoinTV",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149368/",
+         "info": "https://studios.wearebraindead.com/screening/149280"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21114428/ikiru-md-web.jpg",
+      "description": "The summation of the bullshit of modern living in Kurosawa’s masterpiece. An aging bureaucrat searches for some real meaning on this dumb planet. World class cinema, cry yer eyes out.\n",
+      "date": {
+         "day": 1,
+         "month": 22,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "El Topo",
+      "director": "Alejandro Jodorowsky",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=6Uqb4Jy0GTg&ab_channel=ABKCORecordsFilms",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149367/",
+         "info": "https://studios.wearebraindead.com/screening/149283"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21115206/El-Topo-Vintage-Movie-Poster-Original-Japanese-1-Panel-20x29-7354.jpg",
+      "description": "Jodorowsky’s acid western finds himself wandering about the desert, encountering madness everywhere he goes. A staple of midnight movies, so get blazed and kiss the ring.\n",
+      "date": {
+         "day": 1,
+         "month": 22,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Children of Men",
+      "director": "Alfonso Cuarón",
+      "time": "5:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=2VT2apoX90o&ab_channel=MovieclipsClassicTrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149371/",
+         "info": "https://studios.wearebraindead.com/screening/149298"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21120619/children-of-men-meta.jpg",
+      "description": "Clive Owen is a moody grump in the childless future of 2027. Life sucks, but maybe there’s a baby on the way along with a path to redemption? Excellent ’00s Sci-Fi dystopian thriller.\n",
+      "date": {
+         "day": 1,
+         "month": 23,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Two-Lane Blacktop",
+      "director": "Monte Hellman",
+      "time": "7:30PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=Q4onX6ZDsZ0&ab_channel=Eurekaentertainment",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149369/",
+         "info": "https://studios.wearebraindead.com/screening/149286"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21115634/two-lane-blacktop-vintage-movie-poster-original-40x60-2989_2662x-scaled.jpg",
+      "description": "Existential road movie about THE DRIVER and THE MECHANIC racing cars and hanging loose on the bummer highways across this great land. Throw away your books, rally in the streets, burn it all to the ground. RIP Monte Hellman, the king.\n",
+      "date": {
+         "day": 1,
+         "month": 23,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Aguirre, the Wrath of God",
+      "director": "Werner Herzog",
+      "time": "10:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=eJDuicFyJPg&ab_channel=BFITrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149370/",
+         "info": "https://studios.wearebraindead.com/screening/149289"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21120149/MV5BMjRkY2VhYzMtZWQyNS00OTY2LWE5NTAtYjlhNmQyYzE5MmUxXkEyXkFqcGdeQXVyMTQxNzMzNDI%40._V1_.jpg",
+      "description": "Conquistador psycho Klaus Kinski goes deep into the Amazon searching for El Dorado, losing the plot and his sense of direction. Herzog in the jungle, you can’t go wrong.\n",
+      "date": {
+         "day": 1,
+         "month": 23,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Gas Food Lodging",
+      "director": "Allison Anders",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=GV2SgU-Qh5A&ab_channel=ArrowAcademy",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149372/",
+         "info": "https://studios.wearebraindead.com/screening/149301"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21121100/gas-food-lodging-md-web.jpg",
+      "description": "Grunge classic set out in the dusty sticks in New Mexico. A tender drama about a mother and her daughters trying to get their shit together, with a beautiful soundtrack featuring J Mascis.\n",
+      "date": {
+         "day": 1,
+         "month": 26,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Trust Records 99 cents movie night – The Slog Movie",
+      "director": "David Markey",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=mrHr_K9ZIl0&ab_channel=AyatollahRodriguez",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149373/",
+         "info": "https://studios.wearebraindead.com/screening/149304"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/06130839/IMG_6770-3-scaled.jpeg",
+      "description": "An insider look into the early ’80s West Coast/LA punk scene in this rarely seen DIY doc. Fear! TSOL! Redd Kross! Rollins, Dukowski and the rest!\nPresented by Trust Records with director Dave Markey in attendance, who’ll also be sharing a selection of his music videos (Sonic Youth, Dinosaur Jr., et al.).\n",
+      "date": {
+         "day": 1,
+         "month": 27,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Touki Bouki",
+      "director": "Djibril Diop Mambéty",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=xaWmfqrQjU4&ab_channel=AfricanFilmLibrary",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149374/",
+         "info": "https://studios.wearebraindead.com/screening/149306"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21122414/touki-bouki-movie-cover-md.jpg",
+      "description": "Our hero drives the sickest motorcycle of all time in this Senegalese cult hit. He has a meet cute with a uni student, and they make plans for a better life in Paris. Rare screening, don’t miss this!\n",
+      "date": {
+         "day": 1,
+         "month": 28,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Pee-wee’s Big Adventure",
+      "director": "Tim Burton",
+      "time": "10:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=4BU27X3w6uQ&ab_channel=thecoolidge",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149375/",
+         "info": "https://studios.wearebraindead.com/screening/149310"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21122651/PeeWeesBigAdventure-UK.jpg",
+      "description": "U.S. founding father, Pee-Wee Herman, gets his bike stolen and travels to the basement of the Alamo to repatriate it. Your chance to see this landmark of cinema on 35mm. We got it all this month: Kurosawa, Antonioni, Hellman and Herman!\n",
+      "date": {
+         "day": 1,
+         "month": 28,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "There’s Something About Mary",
+      "director": "Bobby Farrelly",
+      "time": "5:30PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=503D8hOfE_8&ab_channel=MovieclipsClassicTrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149378/",
+         "info": "https://studios.wearebraindead.com/screening/149313"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21123359/theres-something-about-mary-cinema-mini-quad-movie-poster-1.jpg",
+      "description": "Jonathan Richman leads the Greek chorus in this fine fable about a young man in love, who gets his balls caught in his zipper and his love interest, who unwittingly uses his cum as hair gel. How romantic.\n",
+      "date": {
+         "day": 1,
+         "month": 29,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Y Tu Mamá También",
+      "director": "Alfonso Cuarón",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=UW1LQbtRuAM&ab_channel=MovieclipsClassicTrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149376/",
+         "info": "https://studios.wearebraindead.com/screening/149319"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21123943/51NNU24x42L._AC_.jpg",
+      "description": "A horny road trip with two young fellas after they meet an attractive older woman. Comedic high-jinks, sexy times and life lessons abound.\n",
+      "date": {
+         "day": 1,
+         "month": 29,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Withnail And I",
+      "director": "Bruce Robinson",
+      "time": "10:30PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=d9Z0DV33gAY&ab_channel=ArrowVideo",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149377/",
+         "info": "https://studios.wearebraindead.com/screening/149316"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21123548/MV5BYjE3ODY5OWEtZmE0Mi00MjUxLTg5MmUtZmFkMzM1N2VjMmU5XkEyXkFqcGdeQXVyNTI4MjkwNjA%40._V1_.jpg",
+      "description": "A warm comedy about two boozy drop-kicks who take a vacation to an uncle’s farm in the English countryside. They bring out a joint the size of a carrot, and someone downs a pint of paint thinner. Cheers to that.\n",
+      "date": {
+         "day": 1,
+         "month": 29,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "The Swimmer",
+      "director": "Frank Perry",
+      "time": "3:30PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=5EgXRCGSabY&ab_channel=jpeoplemover",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149381/",
+         "info": "https://studios.wearebraindead.com/screening/149322"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21124316/MV5BNjJiMmM1N2MtNTczMS00ZDY5LTg0Y2YtYzQ5YmE3MjMyYjM4XkEyXkFqcGdeQXVyMjUzOTY1NTc%40._V1_.jpg",
+      "description": "Burt Lancaster tries to swim his way home across the pools of his rich neighbours. An incredible, subversive hellride that somehow snuck out from the Hollywood studio system. Get your mind blown.\n",
+      "date": {
+         "day": 1,
+         "month": 30,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Pat Garrett and Billy the Kid",
+      "director": "Sam Peckinpah",
+      "time": "5:30PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=a-e47wAkg9g&ab_channel=MovieclipsClassicTrailers",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149380/",
+         "info": "https://studios.wearebraindead.com/screening/149328"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21125035/pat-garrett-and-billy-the-kid-vintage-movie-poster-original-french-1-panel-47x63-5083.jpg",
+      "description": "It’s the end of the Wild West in this Revisionist classic. Pat and Billy got nothing but respect for each other, but they’re still doomed to kill each other. We love it!\n",
+      "date": {
+         "day": 1,
+         "month": 30,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   },
+   {
+      "title": "Easy Rider",
+      "director": "Dennis Hopper",
+      "time": "8:00PM",
+      "links": {
+         "trailer": "https://www.youtube.com/watch?v=IlfpTppsR0U&ab_channel=thecoolidge",
+         "tickets": "https://tickets.wearebraindead.com/purchase/149379/",
+         "info": "https://studios.wearebraindead.com/screening/149325"
+      },
+      "poster": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/12/21124632/MV5BMTc2MjI2NDc4Ml5BMl5BanBnXkFtZTgwODI4NzU0MTI%40._V1_.jpg",
+      "description": "Two hippies ride their bikes cross country to deliver drugs, and meet Jack Nicholson along the way. They drop acid in a cemetery in New Orleans. Cool helmet, great soundtrack!\n",
+      "date": {
+         "day": 1,
+         "month": 30,
+         "year": 2022
+      },
+      "location": "Brain Dead Studios"
+   }
+]

@@ -1,13 +1,23 @@
 const puppeteer = require("puppeteer");
 require('dotenv').config();
 
+// brain dead studio domains
 const BASE_URL = "https://studios.wearebraindead.com";
 const INITIAL_URL = "https://studios.wearebraindead.com/screening/0";
+
+// selectors
 const SCREENING_URL_SELECTOR = ".screening-calendar-ul .screening-calendar-screening-p"; 
-const SCREENING_URL_ATTRIBURE = "ng-reflect-router-link";
+const TITLE_SELECTOR = "div.movie-detail .movie-detail-info h1.movie-detail-title";
+const DIRECTOR_SELECTOR = "div.movie-detail .movie-detail-info .movie-detail-director > span";
+const POSTER_SELECTOR = "div.movie-detail img.movie-detail-img";
+const TRAILER_SELECTOR = "div.movie-detail .movie-detail-info a.movie-detail-trailer";
+const DESCRIPTION_SELECTOR = "div.movie-detail .movie-detail-info .movie-detail-description";
+const TICKET_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li a.showtimes-tickets";
+const TIME_DATE_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li > p";
 
 (async () => {
 	try {
+		// set up brower
 		const browser = await puppeteer.launch();
 		const page = await browser.newPage();
 		page.setUserAgent(process.env.USER_AGENT);
@@ -15,86 +25,58 @@ const SCREENING_URL_ATTRIBURE = "ng-reflect-router-link";
 		await page.goto(INITIAL_URL);
 		await page.waitForSelector(SCREENING_URL_SELECTOR); 
 
-		// const screeningButtons = await page.$$(SCREENING_URL_SELECTOR);
 		const screeningUrls = await page.evaluate(() => {
-			const routingAttributes = Array.from(document.querySelectorAll(".screening-calendar-ul .screening-calendar-screening-p"))
-																		 .map(screening => screening.getAttribute("ng-reflect-router-link"));
-			return routingAttributes.map(routingString => routingString.replace(/,/g,''));
+			// get an array of clickable screening events
+			return Array.from(document.querySelectorAll(".screening-calendar-ul .screening-calendar-screening-p"))
+				// get array of just their routing attribute "/screening/,14999"
+				.map(screening => screening.getAttribute("ng-reflect-router-link"))
+				// remove commas to get valid url
+				.map(routingString => routingString.replace(/,/g,''));
 		});
 
-		let screenings = [];
+		const BRAIN_DEAD_SCREENINGS = [];
 		for (let i = 0; i < screeningUrls.length; i++) {
 			const screeningUrl = `${BASE_URL}${screeningUrls[i]}`
 			await page.goto(screeningUrl);
 			await page.waitForSelector(SCREENING_URL_SELECTOR);
 
-			const filmTitle = await page.$eval("div.movie-detail .movie-detail-info h1", element => element.textContent);
-			let filmDirector = await page.$eval("div.movie-detail .movie-detail-info .movie-detail-director > span",
-													 element => element.textContent);
-			filmDirector = filmDirector.slice(10);
-			const filmPosterUrl = await page.$eval("div.movie-detail img.movie-detail-img", element => element.getAttribute("src"));
-			const filmTrailerUrl = await page.$eval("div.movie-detail .movie-detail-info a.movie-detail-trailer", element => element.getAttribute("href"));
-			const filmDescription = await page.$eval("div.movie-detail .movie-detail-info .movie-detail-description", element => element.textContent);
-			const filmTicketsUrl = await page.$eval("div.movie-detail .movie-detail-info .showtimes-li a.showtimes-tickets", element => element.getAttribute("href"));
-			// const filmFormat = await page.$eval("div.movie-detail .movie-detail-info .movie-detail-description > span", element => element.textContent);
-			let filmDateAndTime = await page.$eval("div.movie-detail .movie-detail-info .showtimes-li > p", element => element.textContent);
-			filmDateAndTime = filmDateAndTime.split(",").map(string => string.trim());
-			
-			const filmDate = filmDateAndTime[0];
-			const [dateDay, dateMonth, dateYear] = filmDate.split("-");
-			const filmTime = filmDateAndTime[1];
+			// screening info
+			const title = await page.$eval(TITLE_SELECTOR, element => element.textContent);
+			const director = await page.$eval(DIRECTOR_SELECTOR, element => element.textContent); // Director: Martin Scorsese
+			const description = await page.$eval(DESCRIPTION_SELECTOR, element => element.textContent);
+			const showtime = await page.$eval(TIME_DATE_SELECTOR, element => element.textContent); // 01-09-2022, 8:00PM
+			const [date, time] = showtime.split(",").map(string => string.trim());
+			const [day, month, year] = date.split("-");
+			// screening poster image
+			const poster = await page.$eval(POSTER_SELECTOR, element => element.getAttribute("src"));
+			// screening links to trailer or buy tickets
+			const trailer = await page.$eval(TRAILER_SELECTOR, element => element.getAttribute("href"));
+			const tickets = await page.$eval(TICKET_SELECTOR, element => element.getAttribute("href"));
 
-			console.log(filmTitle);
-			screenings.push({ 
-				title: filmTitle, 
-				director: filmDirector,
-				trailer: filmTrailerUrl,
-				image: filmPosterUrl,
-				links: {
-					trailer: filmTrailerUrl,
-					image: filmPosterUrl,
-					tickets: filmTicketsUrl	
+			BRAIN_DEAD_SCREENINGS.push({ 
+				title, 
+				director: director.slice(10),
+				time,
+				links: { 
+					trailer, 
+					tickets, 
+					info: screeningUrl 
 				},
-				description: filmDescription,
-				time: filmTime,
+				poster,
+				description,
 				date: {
-					day: Number(dateDay),
-					month: Number(dateMonth),
-					year: Number(dateYear)
+					day: Number(day),
+					month: Number(month),
+					year: Number(year)
 				},
 				location: "Brain Dead Studios"
 			});
 		}
 
-		console.log(JSON.stringify(screenings, null, 3));
+		console.log(JSON.stringify(BRAIN_DEAD_SCREENINGS, null, 3));
 
 		await browser.close();
 	} catch (error) {
 		console.log(error);
 	}
 })();
-
-// eventCard: div.screening-calendar > ul > li:nth-child(21)
-// clickable-titles: .screening-calendar-screening-p
-// title: div.movie-detail .movie-detail-info h1
-// date: div.movie-detail .movie-detail-info .showtimes-li p
-// photoUrl: div.movie-detail img.movie-detail-img
-// trailerUrl: div.movie-detail .movie-detail-info a.movie-detail-trailer
-// tickets: div.movie-detail .movie-detail-info .showtimes-li a.showtimes-tickets
-// format: div.movie-detail .movie-detail-info .movie-detail-description > span
-
-// {
-// 	title: "",
-// 	director: "",
-// 	trailer: "",
-// 	screenings: [],
-// 	description: "",
-// 	date: {
-// 		year: 1,
-// 		month: 1,
-// 		day: 1
-// 	},
-// 	location: "Brain Dead Studios",
-// 	ticketsUrl: "",
-// 	infoUrl: ""
-// }
