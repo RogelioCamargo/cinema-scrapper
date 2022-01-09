@@ -1,5 +1,6 @@
 const puppeteer = require("puppeteer");
 require('dotenv').config();
+const fs = require("fs-extra");
 
 // brain dead studio domains
 const BASE_URL = "https://studios.wearebraindead.com";
@@ -53,6 +54,8 @@ const TIME_DATE_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li > 
 			const trailer = await page.$eval(TRAILER_SELECTOR, element => element.getAttribute("href"));
 			const tickets = await page.$eval(TICKET_SELECTOR, element => element.getAttribute("href"));
 
+			console.log(title);
+			
 			BRAIN_DEAD_SCREENINGS.push({ 
 				title, 
 				director: director.slice(10),
@@ -73,7 +76,7 @@ const TIME_DATE_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li > 
 			});
 		}
 
-		console.log(JSON.stringify(BRAIN_DEAD_SCREENINGS, null, 3));
+		await fs.writeFile("./data/BRAINDEAD_SCREENINGS.json", JSON.stringify(BRAIN_DEAD_SCREENINGS, null, 3));
 
 		await browser.close();
 	} catch (error) {

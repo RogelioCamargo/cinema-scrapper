@@ -1,5 +1,6 @@
 const puppeteer = require("puppeteer");
 require('dotenv').config();
+const fs = require("fs-extra");
 
 const MONTH = 1;
 const YEAR = 2022;
@@ -35,6 +36,7 @@ const DATE_SELECTOR = "div.movie-mast__posters .movie-mast__dates";
 		console.log(screeningUrls.length);
 
 		const NEW_BEVERLY_SCREENINGS = [];
+
 		for (let i = 0; i < screeningUrls.length; i++) {
 			await page.goto(screeningUrls[i]);
 			await page.waitForSelector(SCREENING_SELECTOR);
@@ -86,7 +88,7 @@ const DATE_SELECTOR = "div.movie-mast__posters .movie-mast__dates";
 			}
 		}
 
-		console.log(JSON.stringify(NEW_BEVERLY_SCREENINGS, null, 3));
+		await fs.writeFile('./data/BEVERLY_SCREENINGS.json', JSON.stringify(NEW_BEVERLY_SCREENINGS, null, 3));
 
 		await browser.close();
 	} catch (error) {
