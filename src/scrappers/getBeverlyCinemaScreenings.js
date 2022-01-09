@@ -50,7 +50,7 @@ const getBeverlyCinemaScreenings = async () => {
 			// get times for screening(s)
 			const times = await page.evaluate(() => {
 				return Array.from(document.querySelectorAll("div.movie-mast__titles .movie-mast__times"))
-					.map(element => element.textContent.trim());
+					.map(element => element.textContent.trim().replace(/\s/g, '').toUpperCase());
 			});
 
 			let j = 0;
@@ -87,7 +87,7 @@ const getBeverlyCinemaScreenings = async () => {
 		}
 
 		await fs.writeFile('./data/BEVERLY_SCREENINGS.json', JSON.stringify(NEW_BEVERLY_SCREENINGS, null, 3));
-
+		console.log("FINISHED");
 		await browser.close();
 	} catch (error) {
 		console.log(error);

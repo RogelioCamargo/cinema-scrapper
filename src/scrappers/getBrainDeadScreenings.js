@@ -23,6 +23,7 @@ const getBrainDeadScreenings = async () => {
 		const page = await browser.newPage();
 		page.setUserAgent(process.env.USER_AGENT);
 
+		// go to calander page
 		await page.goto(INITIAL_URL);
 		await page.waitForSelector(SCREENING_URL_SELECTOR); 
 
@@ -77,7 +78,7 @@ const getBrainDeadScreenings = async () => {
 		}
 
 		await fs.writeFile("./data/BRAINDEAD_SCREENINGS.json", JSON.stringify(BRAIN_DEAD_SCREENINGS, null, 3));
-
+		console.log("FINISHED");
 		await browser.close();
 	} catch (error) {
 		console.log(error);
