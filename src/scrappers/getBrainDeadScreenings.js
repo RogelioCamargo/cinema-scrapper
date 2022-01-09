@@ -16,7 +16,7 @@ const DESCRIPTION_SELECTOR = "div.movie-detail .movie-detail-info .movie-detail-
 const TICKET_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li a.showtimes-tickets";
 const TIME_DATE_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li > p";
 
-(async () => {
+const getBrainDeadScreenings = async () => {
 	try {
 		// set up brower
 		const browser = await puppeteer.launch();
@@ -54,7 +54,7 @@ const TIME_DATE_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li > 
 			const trailer = await page.$eval(TRAILER_SELECTOR, element => element.getAttribute("href"));
 			const tickets = await page.$eval(TICKET_SELECTOR, element => element.getAttribute("href"));
 
-			console.log(title);
+			// console.log(title);
 			
 			BRAIN_DEAD_SCREENINGS.push({ 
 				title, 
@@ -82,4 +82,6 @@ const TIME_DATE_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li > 
 	} catch (error) {
 		console.log(error);
 	}
-})();
+};
+
+module.exports = { getBrainDeadScreenings };

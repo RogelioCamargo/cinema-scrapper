@@ -18,7 +18,7 @@ const TRAILER_SELECTOR = ".movie__content .movie__ctas a:nth-child(1)";
 const DESCRIPTION_SELECTOR = ".movie__content > p:last-of-type";
 const DATE_SELECTOR = "div.movie-mast__posters .movie-mast__dates";
 
-(async () => {
+const getBeverlyCinemaScreenings = async () => {
 	try {
 		// set up browser
 		const browser = await puppeteer.launch();
@@ -33,7 +33,7 @@ const DATE_SELECTOR = "div.movie-mast__posters .movie-mast__dates";
 				.map(screening => screening.getAttribute("href"));
 		});
 
-		console.log(screeningUrls.length);
+		// console.log(screeningUrls.length);
 
 		const NEW_BEVERLY_SCREENINGS = [];
 
@@ -53,8 +53,6 @@ const DATE_SELECTOR = "div.movie-mast__posters .movie-mast__dates";
 					.map(element => element.textContent.trim());
 			});
 
-			// console.log(times);
-
 			let j = 0;
 			for (const screening of screenings) {
 				const title = await screening.$eval(TITLE_SELECTOR, element => element.textContent);
@@ -62,7 +60,7 @@ const DATE_SELECTOR = "div.movie-mast__posters .movie-mast__dates";
 				const description = await screening.$eval(DESCRIPTION_SELECTOR, element => element.textContent);
 				const poster = await screening.$eval(POSTER_SELECTOR, element => element.getAttribute("src"));
 				const trailer = await screening.$eval(TRAILER_SELECTOR, element => element.getAttribute("href"));
-				console.log(title);
+				// console.log(title);
 
 				NEW_BEVERLY_SCREENINGS.push({
 					title, 
@@ -95,4 +93,6 @@ const DATE_SELECTOR = "div.movie-mast__posters .movie-mast__dates";
 		console.log(error);
 	}
 
-})();
+};
+
+module.exports = { getBeverlyCinemaScreenings };

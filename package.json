@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "brain-dead": "node src/getBrainDeadScreenings.js",
-    "beverly": "node src/getBeverlyCinemaScreenings.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
