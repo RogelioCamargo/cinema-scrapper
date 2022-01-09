@@ -1,42 +1,96 @@
 const puppeteer = require("puppeteer");
+require('dotenv').config();
+
+const MONTH = 1;
+const YEAR = 2022;
+
+// new beverly cinema domains
+const INITIAL_URL = "https://thenewbev.com/schedule/";
+
+// selectors
+const EVENT_CARD_SELECTOR = "section.events .event-card";
+const SCREENING_SELECTOR = "section.movies .movie";
+const TITLE_SELECTOR = ".movie__content h2.movie__title";
+const DIRECTOR_SELECTOR = ".movie__content .movie__details dd";
+const POSTER_SELECTOR = ".movie__img figure.movie__poster > img";
+const TRAILER_SELECTOR = ".movie__content .movie__ctas a:nth-child(1)";
+const DESCRIPTION_SELECTOR = ".movie__content > p:last-of-type";
+const DATE_SELECTOR = "div.movie-mast__posters .movie-mast__dates";
 
 (async () => {
-	const browser = await puppeteer.launch();
-	const page = await browser.newPage();
-	await page.goto("https://thenewbev.com/schedule/");
+	try {
+		// set up browser
+		const browser = await puppeteer.launch();
+		const page = await browser.newPage();
+		page.setUserAgent(process.env.USER_AGENT);
 
-	const BEVERLY_CINEMA_SCREENINGS = await page.evaluate(() => {
-		const eventCards = Array.from(document.querySelectorAll(".event-card"));
+		await page.goto(INITIAL_URL);
+		await page.waitForSelector(EVENT_CARD_SELECTOR);
 
-		const screenings = eventCards.map((eventCard) => {
-			const showDay = eventCard.querySelector(".event-card__date .event-card__numb").textContent;
-			const showTitle = eventCard.querySelector(".event-card__info .event-card__title").textContent.trim();
-			const showUrl = eventCard.querySelector(".event-card a").getAttribute("href");
-			const showTimes = Array.from(eventCard.querySelectorAll(".event-card__info .event-card__time")).map(time => time.textContent);
-			const showImage = document.querySelector(".event-card .event-card__img img").src
-
-			// showTitle may contain more than one title, "/" is the seperating character
-			const showTitles = showTitle.split("/").map(item => item.trim());
-			// create ojbect events of type { title, time }
-			const showEvents = showTitles.map((showTitle, index) => ({ title: showTitle, time: showTimes[index]}));
-
-			return {
-				date: {
-					year: 2022,
-					month: 1,
-					day: Number(showDay)
-				},
-				shows: showEvents,
-				location: "New Beverly Cinema",
-				url: showUrl,
-				image: showImage,
-			};
+		const screeningUrls = await page.evaluate(() => {
+			return Array.from(document.querySelectorAll("section.events .event-card > a"))
+				.map(screening => screening.getAttribute("href"));
 		});
 
-		return screenings;
-	});
+		console.log(screeningUrls.length);
 
-	console.log(JSON.stringify(BEVERLY_CINEMA_SCREENINGS, null, 3));
+		const NEW_BEVERLY_SCREENINGS = [];
+		for (let i = 0; i < screeningUrls.length; i++) {
+			await page.goto(screeningUrls[i]);
+			await page.waitForSelector(SCREENING_SELECTOR);
+			
+			// for double features, get both movies
+			const screenings = await page.$$(SCREENING_SELECTOR);
+			// get date for screening(s)
+			const date = await page.$eval(DATE_SELECTOR, element => element.textContent); // January 08, 2022
+			const index = date.indexOf(",");
+			const day = Number(date.slice(index - 2, index));
+			// get times for screening(s)
+			const times = await page.evaluate(() => {
+				return Array.from(document.querySelectorAll("div.movie-mast__titles .movie-mast__times"))
+					.map(element => element.textContent.trim());
+			});
 
-	await browser.close();
+			// console.log(times);
+
+			let j = 0;
+			for (const screening of screenings) {
+				const title = await screening.$eval(TITLE_SELECTOR, element => element.textContent);
+				const director = await screening.$eval(DIRECTOR_SELECTOR, element => element.textContent);
+				const description = await screening.$eval(DESCRIPTION_SELECTOR, element => element.textContent);
+				const poster = await screening.$eval(POSTER_SELECTOR, element => element.getAttribute("src"));
+				const trailer = await screening.$eval(TRAILER_SELECTOR, element => element.getAttribute("href"));
+				console.log(title);
+
+				NEW_BEVERLY_SCREENINGS.push({
+					title, 
+					director,
+					time: times[j],
+					links: {
+						trailer, 
+						tickets: screeningUrls[i],
+						info: screeningUrls[i]
+					},
+					poster,
+					description,
+					date: {
+						day,
+						month: MONTH,
+						year: YEAR
+					},
+					location: "New Beverly Cinema",
+					isDoubleFeature: screenings.length > 1 ? true : false
+				});
+
+				j++;
+			}
+		}
+
+		console.log(JSON.stringify(NEW_BEVERLY_SCREENINGS, null, 3));
+
+		await browser.close();
+	} catch (error) {
+		console.log(error);
+	}
+
 })();
