@@ -23,7 +23,7 @@ const getBeverlyCinemaScreenings = async () => {
 		// set up browser
 		const browser = await puppeteer.launch();
 		const page = await browser.newPage();
-		page.setUserAgent(process.env.USER_AGENT);
+		await page.setUserAgent(process.env.USER_AGENT);
 
 		await page.goto(INITIAL_URL);
 		await page.waitForSelector(EVENT_CARD_SELECTOR);
@@ -87,6 +87,7 @@ const getBeverlyCinemaScreenings = async () => {
 		}
 
 		await fs.writeFile('./data/BEVERLY_SCREENINGS.json', JSON.stringify(NEW_BEVERLY_SCREENINGS, null, 3));
+		
 		console.log("FINISHED");
 		await browser.close();
 	} catch (error) {

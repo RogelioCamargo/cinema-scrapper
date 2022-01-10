@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-require('dotenv').config();
+require("dotenv").config();
 const fs = require("fs-extra");
 
 // brain dead studio domains
@@ -13,7 +13,7 @@ const DIRECTOR_SELECTOR = "div.movie-detail .movie-detail-info .movie-detail-dir
 const POSTER_SELECTOR = "div.movie-detail img.movie-detail-img";
 const TRAILER_SELECTOR = "div.movie-detail .movie-detail-info a.movie-detail-trailer";
 const DESCRIPTION_SELECTOR = "div.movie-detail .movie-detail-info .movie-detail-description";
-const TICKET_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li a.showtimes-tickets";
+// const TICKET_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li a.showtimes-tickets";
 const TIME_DATE_SELECTOR = "div.movie-detail .movie-detail-info .showtimes-li > p";
 
 const getBrainDeadScreenings = async () => {
@@ -21,7 +21,7 @@ const getBrainDeadScreenings = async () => {
 		// set up brower
 		const browser = await puppeteer.launch();
 		const page = await browser.newPage();
-		page.setUserAgent(process.env.USER_AGENT);
+		await page.setUserAgent(process.env.USER_AGENT);
 
 		// go to calander page
 		await page.goto(INITIAL_URL);
@@ -53,7 +53,7 @@ const getBrainDeadScreenings = async () => {
 			const poster = await page.$eval(POSTER_SELECTOR, element => element.getAttribute("src"));
 			// screening links to trailer or buy tickets
 			const trailer = await page.$eval(TRAILER_SELECTOR, element => element.getAttribute("href"));
-			const tickets = await page.$eval(TICKET_SELECTOR, element => element.getAttribute("href"));
+			// const tickets = await page.$eval(TICKET_SELECTOR, element => element.getAttribute("href"));
 
 			// console.log(title);
 			
@@ -63,7 +63,7 @@ const getBrainDeadScreenings = async () => {
 				time,
 				links: { 
 					trailer, 
-					tickets, 
+					tickets: screeningUrl,
 					info: screeningUrl 
 				},
 				poster,
