@@ -13,7 +13,7 @@ const {
 const { 
 	getScreeningUrls, 
 	getScreeningDetails, 
-	updateScreeningDetails 
+	formatScreeningDetails 
 } = require("./utils");
 
 const getBrainDeadScreenings = async () => {
@@ -46,7 +46,7 @@ const getBrainDeadScreenings = async () => {
 				...DETAILS
 			);
 			// properly format details
-			const formattedScreeningDetails = updateScreeningDetails(
+			const formattedScreeningDetails = formatScreeningDetails(
 				screeningDetails, SCREENING_URLS[i]
 			);
 			

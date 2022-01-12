@@ -23,7 +23,7 @@ const getScreeningDetails = (
 	return { title, director, description, showtime, poster, trailer };
 };
 
-const updateScreeningDetails = (screeningDetails, screeningUrl) => {
+const formatScreeningDetails = (screeningDetails, screeningUrl) => {
 	const { title, description, showtime, poster, trailer } = screeningDetails;
 
 	const [date, time] = showtime.split(",").map(string => string.trim());
@@ -53,6 +53,6 @@ const updateScreeningDetails = (screeningDetails, screeningUrl) => {
 module.exports = { 
 	getScreeningUrls, 
 	getScreeningDetails, 
-	updateScreeningDetails 
+	formatScreeningDetails 
 };
 
