@@ -5,8 +5,8 @@ const {
 
 (async () => {
 	try {
-		// await getBeverlyCinemaScreenings();
-		await getBrainDeadScreenings();
+		await getBeverlyCinemaScreenings();
+		// await getBrainDeadScreenings();
 	} catch (error) {
 		console.log(error);
 	}

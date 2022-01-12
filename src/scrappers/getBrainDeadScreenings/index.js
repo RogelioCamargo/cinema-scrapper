@@ -29,6 +29,7 @@ const getBrainDeadScreenings = async () => {
 		// go to calander page
 		await page.goto(INITIAL_URL, { waitUntil: "networkidle0" });
 
+		// get all screening urls
 		const SCREENING_URLS = await page.evaluate(
 			getScreeningUrls, 
 			SCREENING_URL_SELECTOR, BASE_URL
@@ -37,7 +38,7 @@ const getBrainDeadScreenings = async () => {
 		const BRAIN_DEAD_SCREENINGS = [];
 
 		for (let i = 0; i < SCREENING_URLS.length; i++) {
-			// go to screening info page
+			// go to screening details page
 			await page.goto(SCREENING_URLS[i], { waitUntil: "networkidle0" });
 
 			// get screening details
