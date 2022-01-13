@@ -80,8 +80,8 @@ const getScreeningDetails = (screeningUrl, selectors) => {
 
 		if (!firstFeatureElement || !secondFeatureElement) {
 			const [firstTitle, secondTitle] = title.split("/").map(item => item.trim());
-			const firstScreening = createScreeningEvent(firstTitle, "_");
-			const secondScreening = createScreeningEvent(secondTitle, "_");
+			const firstScreening = createScreeningEvent(firstTitle, "");
+			const secondScreening = createScreeningEvent(secondTitle, "");
 			return [firstScreening, secondScreening];
 		}
 		// extract text contents
