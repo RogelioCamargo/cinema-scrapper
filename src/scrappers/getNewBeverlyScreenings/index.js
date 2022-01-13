@@ -1,3 +1,6 @@
+// IN ORDER FOR EVERYTHING TO WORK PROPERTLY, 
+// YOU HAVE TO MAKE SURE CONTSTANTS ARE CORRECT
+
 require('dotenv').config();
 const puppeteer = require("puppeteer");
 const fs = require("fs-extra");

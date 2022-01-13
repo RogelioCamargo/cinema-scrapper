@@ -25,7 +25,7 @@ const getScreeningUrls = async (page) => {
 			EVENT_LIST_CARD_SELECTOR,
 			elements => elements.map(anchor => anchor.getAttribute("href"))
 		);
-		// console.log(screeningUrls);
+		console.log(dayScreeningUrls);
 		screeningsUrls.push(...dayScreeningUrls);
 	}
 	

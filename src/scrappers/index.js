@@ -1,9 +1,13 @@
 const { getNewBeverlyScreenings } = require("./getNewBeverlyScreenings");
 const { getBrainDeadScreenings } = require("./getBrainDeadScreenings");
-const { getAeroTheaterScreenings } = require("./getAeroTheatreScreenings");
+const { 
+	getAeroTheaterScreenings, 
+	getAeroTheaterScreeningsUsingFile 
+} = require("./getAeroTheatreScreenings");
 
 module.exports = { 
 	getNewBeverlyScreenings, 
 	getBrainDeadScreenings,
-	getAeroTheaterScreenings
+	getAeroTheaterScreenings,
+	getAeroTheaterScreeningsUsingFile
 };
