@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-		"aero": "node src/scrappers/getAeroTheatreScreenings.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",

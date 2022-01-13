@@ -1,12 +1,14 @@
 const { 
-	getBeverlyCinemaScreenings, 
-	getBrainDeadScreenings 
+	getNewBeverlyScreenings, 
+	getBrainDeadScreenings, 
+	getAeroTheaterScreenings
 } = require("./scrappers");
 
 (async () => {
 	try {
-		await getBeverlyCinemaScreenings();
-		// await getBrainDeadScreenings();
+		await getNewBeverlyScreenings();
+		await getBrainDeadScreenings();
+		await getAeroTheaterScreenings();
 	} catch (error) {
 		console.log(error);
 	}

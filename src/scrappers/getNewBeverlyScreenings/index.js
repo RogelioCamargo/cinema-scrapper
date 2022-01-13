@@ -17,7 +17,7 @@ const {
 	getScreeningDetails
 } = require("./utils");
 
-const getBeverlyCinemaScreenings = async () => {
+const getNewBeverlyScreenings = async () => {
 	try {
 		// set up browser
 		const browser = await puppeteer.launch();
@@ -79,4 +79,4 @@ const getBeverlyCinemaScreenings = async () => {
 
 };
 
-module.exports = { getBeverlyCinemaScreenings };
+module.exports = { getNewBeverlyScreenings };
