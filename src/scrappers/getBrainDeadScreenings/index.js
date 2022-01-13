@@ -15,6 +15,7 @@ const {
 	getScreeningDetails, 
 	formatScreeningDetails 
 } = require("./utils");
+const Screening = require("../../models/screening");
 
 const getBrainDeadScreenings = async () => {
 	try {
@@ -48,13 +49,18 @@ const getBrainDeadScreenings = async () => {
 			);
 			// properly format details
 			const formattedScreeningDetails = formatScreeningDetails(
-				screeningDetails, SCREENING_URLS[i]
+				screeningDetails, 
+				SCREENING_URLS[i]
 			);
 			
-			// console.log(formattedScreeningDetails.title);
+			const newScreening = new Screening(formattedScreeningDetails);
+			await newScreening.save();
+			console.log(formattedScreeningDetails.title);
 
 			BRAIN_DEAD_SCREENINGS.push(formattedScreeningDetails);
 		}
+		
+		console.log("FINISHED");
 		
 		// save data to json file
 		await fs.writeFile(

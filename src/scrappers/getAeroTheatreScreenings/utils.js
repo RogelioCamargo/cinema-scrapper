@@ -8,8 +8,8 @@ const {
 
 const getUrl = (DAY) => {
 	const { MONTH, YEAR } = SELECTORS;
-	return "https://www.americancinematheque.com/now-showing/" +
-	`?start=${YEAR}.${MONTH}.${DAY}&end=${YEAR}.${MONTH}.${DAY}&view_type=list`;
+	return "https://www.americancinematheque.com/now-showing/?event_location=54&event_location=55&event_location=102" +
+	`&start=${YEAR}.${MONTH}.${DAY}&end=${YEAR}.${MONTH}.${DAY}&view_type=list`;
 };
 
 const getScreeningUrls = async (page) => {	
@@ -37,8 +37,8 @@ const getScreeningDetails = (screeningUrl, selectors) => {
 		MONTH, YEAR, TITLE_SELECTOR, POSTER_SELECTOR,
 		LOCATION_SELECTOR, DATE_SELECTOR,
 		TIME_SELECTOR, SINGLE_DESCRIPTION_SELECTOR,
-		SINGLE_DIRECTOR_SELECTOR, DOUBLE_TITLE_SELECTOR,
-		DOUBLE_DIRECTOR_SELECTOR
+		SINGLE_DIRECTOR_SELECTOR, DOUBLE_FIRST_SELECTOR,
+		DOUBLE_SECOND_SELECTOR
 	} = selectors;
 
 	const title = document.querySelector(TITLE_SELECTOR).textContent;
@@ -75,8 +75,19 @@ const getScreeningDetails = (screeningUrl, selectors) => {
 	
 	if (title.includes("/")) {
 		// i. e. BILLIE EILISH: THE WORLD’S A LITTLE BLURRY, 2021, Apple TV+, 140 min. Dir. R. J. Cutler.  
-		const firstFeature = document.querySelector(DOUBLE_TITLE_SELECTOR).textContent;
-		const secondFeature = document.querySelector(DOUBLE_DIRECTOR_SELECTOR).textContent;
+		const firstFeatureElement = document.querySelector(DOUBLE_FIRST_SELECTOR);
+		const secondFeatureElement = document.querySelector(DOUBLE_SECOND_SELECTOR);
+
+		if (!firstFeatureElement || !secondFeatureElement) {
+			const [firstTitle, secondTitle] = title.split("/").map(item => item.trim());
+			const firstScreening = createScreeningEvent(firstTitle, "_");
+			const secondScreening = createScreeningEvent(secondTitle, "_");
+			return [firstScreening, secondScreening];
+		}
+		// extract text contents
+		const firstFeature = firstFeatureElement.textContent;
+		const secondFeature = secondFeatureElement.textContent;
+
 		// extract titles
 		const firstFeatureTitle = firstFeature.slice(0, firstFeature.indexOf(","));
 		const secondFeatureTitle = secondFeature.slice(0, secondFeature.indexOf(","));

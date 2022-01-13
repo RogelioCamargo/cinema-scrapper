@@ -4,6 +4,7 @@
 require('dotenv').config();
 const puppeteer = require("puppeteer");
 const fs = require("fs-extra");
+const Screening = require("../../models/screening");
 
 // CONSTANTS
 const {
@@ -67,12 +68,15 @@ const getNewBeverlyScreenings = async () => {
 					details,
 					SELECTORS,
 				);
+				
+				const newScreening = new Screening(screeningDetails);
+				await newScreening.save();
 
 				console.log(screeningDetails.title);
 				NEW_BEVERLY_SCREENINGS.push(screeningDetails);
 			}
 		}
-
+		console.log("FINISHED");
 		await fs.writeFile('./data/NEWBEVERLY_SCREENINGS.json', JSON.stringify(NEW_BEVERLY_SCREENINGS, null, 3));
 		
 		await browser.close();

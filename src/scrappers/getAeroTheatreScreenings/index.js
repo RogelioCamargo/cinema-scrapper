@@ -11,6 +11,7 @@ const {
 } = require("./constants");
 // UTILS
 const { getScreeningUrls, getScreeningDetails } = require("./utils");
+const Screening = require("../../models/screening");
 
 const getOnlyScreeningUrls = async () => {
 	try {
@@ -49,16 +50,20 @@ const getAeroTheaterScreeningsUsingFile = async () => {
 			await page.goto(SCREENING_URLS[i], { waitUntil: "networkidle0" });
 
 			// get all screening details
-			const screeningDetails = await page.evaluate(
+			const screeningDetailsArray = await page.evaluate(
 				getScreeningDetails, 
 				SCREENING_URLS[i], 
 				SELECTORS
 			);
-
-			screeningDetails.map(s => console.log(s.title));
-			AERO_THEATRE_SCREENINGS.push(...screeningDetails);
+			
+			for (let j = 0; j < screeningDetailsArray.length; j++) {
+				console.log(screeningDetailsArray[j].title);
+				const newScreening = new Screening(screeningDetailsArray[j]);
+				await newScreening.save();
+			}
+			AERO_THEATRE_SCREENINGS.push(...screeningDetailsArray);
 		}
-		
+		console.log("FINISHED");
 		await fs.writeFile('./data/AEROTHEATER_SCREENINGS.json', JSON.stringify(AERO_THEATRE_SCREENINGS, null, 3));
 
 		await browser.close();
