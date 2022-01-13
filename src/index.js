@@ -11,18 +11,18 @@ const Screening = require("./models/screening");
 
 (async () => {
 	try {
-		await mongoose.connect(process.env.MONGODB_URI_TEST);
+		await mongoose.connect(process.env.MONGODB_URI);
 		console.log("Connected to MongoDB!");
 
 		// clear database
-		// await Screening.deleteMany({});
+		await Screening.deleteMany({});
 		
 		// for debuggging / or easing task of getting aero screenings
 		// await getOnlyScreeningUrls();
 
 		// get screenings
-		// await getNewBeverlyScreenings();
-		// await getBrainDeadScreenings();
+		await getNewBeverlyScreenings();
+		await getBrainDeadScreenings();
 		
 		// only use one of the two for getting aero screenings
 		await getAeroTheaterScreeningsUsingFile();
