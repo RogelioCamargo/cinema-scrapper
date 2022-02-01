@@ -26,18 +26,24 @@ const getScreeningDetails = (
 	const indexOfComma = date.indexOf(",");
 	const day = Number(date.slice(indexOfComma - 2, indexOfComma));
 
-	const title = screening.querySelector(TITLE_SELECTOR).textContent;
-	const director = screening.querySelector(DIRECTOR_SELECTOR).textContent;
-	const description = screening.querySelector(DESCRIPTION_SELECTOR).textContent;
-	const poster = screening.querySelector(POSTER_SELECTOR).getAttribute("src");
-	const trailer = screening.querySelector(TRAILER_SELECTOR).getAttribute("href");
+	let title = screening.querySelector(TITLE_SELECTOR).textContent;
+
+	let director = screening.querySelector(DIRECTOR_SELECTOR);
+	if (director) director = director.textContent;
+
+	let description = screening.querySelector(DESCRIPTION_SELECTOR).textContent;
+	// if (description) description = description.textContent;
+
+	let poster = screening.querySelector(POSTER_SELECTOR).getAttribute("src");
+	let trailer = screening.querySelector(TRAILER_SELECTOR);
+	if (trailer) trailer = trailer.getAttribute("href");
 
 	return { 
 		title, 
-		director, 
+		director: director ? director : "", 
 		time,
 		links: {
-			trailer,
+			trailer: trailer ? trailer : "",
 			info: screeningUrl
 		},
 		poster, 

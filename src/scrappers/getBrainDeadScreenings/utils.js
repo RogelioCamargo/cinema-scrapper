@@ -27,7 +27,7 @@ const formatScreeningDetails = (screeningDetails, screeningUrl) => {
 	const { title, description, showtime, poster, trailer } = screeningDetails;
 
 	const [date, time] = showtime.split(",").map(string => string.trim());
-	const [day, month, year] = date.split("-");
+	const [month, day, year] = date.split("-");
 	const director = screeningDetails.director.slice(10);
 
 	return { 

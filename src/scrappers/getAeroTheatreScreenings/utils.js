@@ -8,7 +8,8 @@ const {
 
 const getUrl = (DAY) => {
 	const { MONTH, YEAR } = SELECTORS;
-	return "https://www.americancinematheque.com/now-showing/?event_location=54&event_location=55&event_location=102" +
+	console.log(DAY);
+	return "https://www.americancinematheque.com/now-showing/?event_location=54&event_location=55&event_location=102&event_location=68" +
 	`&start=${YEAR}.${MONTH}.${DAY}&end=${YEAR}.${MONTH}.${DAY}&view_type=list`;
 };
 
@@ -41,34 +42,41 @@ const getScreeningDetails = (screeningUrl, selectors) => {
 		DOUBLE_SECOND_SELECTOR
 	} = selectors;
 
-	const title = document.querySelector(TITLE_SELECTOR).textContent;
-	const time = document.querySelector(TIME_SELECTOR).textContent.replace(/\s/g, '');
-	const poster = document.querySelector(POSTER_SELECTOR).getAttribute("src");
+	let title = document.querySelector(TITLE_SELECTOR).textContent;
+	let time = document.querySelector(TIME_SELECTOR);
+	if (time) time = time.textContent.replace(/\s/g, '');
+
+	let poster = document.querySelector(POSTER_SELECTOR);
+	if (poster) poster = poster.getAttribute("src");
 	// get day
-	const date = document.querySelector(DATE_SELECTOR).textContent;
-	const indexOfComma = date.indexOf(","); // SUN JANUARY 9, 2022
-	const day = Number(date.slice(indexOfComma - 2, indexOfComma)); 
+	let date = document.querySelector(DATE_SELECTOR).textContent;
+	let indexOfComma = date.indexOf(","); // SUN JANUARY 9, 2022
+	let day = Number(date.slice(indexOfComma - 2, indexOfComma)); 
 	// get location
-	const theater = document.querySelector(LOCATION_SELECTOR).textContent; // Los Feliz 3 | New Restoration
-	const location = theater.slice(0, theater.indexOf("|")).trim();
+	let theater = document.querySelector(LOCATION_SELECTOR);
+	let location = "";
+	if (theater) {
+		theater = theater.textContent; // Los Feliz 3 | New Restoration
+		location = theater.slice(0, theater.indexOf("|")).trim();
+	} 
 
 	const createScreeningEvent = (screeningTitle, director, isDoubleFeature = true, screeningDescription = null) => {
 		return {
 			title: screeningTitle,
 			director,
-			time,
+			time: time,
 			links: {
-				trailer: screeningUrl,
+				trailer: "",
 				info: screeningUrl,
 			},
-			poster,
+			poster: poster,
 			description: screeningDescription ? screeningDescription : "This is a double feature, check screening page for more details!",
 			date: {
 				day,
 				month: MONTH,
 				year: YEAR
 			},
-			location,
+			location: location ? location : "",
 			isDoubleFeature
 		};
 	};

@@ -25,8 +25,8 @@ const Screening = require("./models/screening");
 		await getBrainDeadScreenings();
 		
 		// only use one of the two for getting aero screenings
-		await getAeroTheaterScreeningsUsingFile();
-		// await getAeroTheaterScreenings();
+		// await getAeroTheaterScreeningsUsingFile();
+		await getAeroTheaterScreenings();
 	} catch (error) {
 		console.log(error);
 	}

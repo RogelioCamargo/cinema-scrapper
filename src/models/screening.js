@@ -15,7 +15,7 @@ const ScreeningSchema = new mongoose.Schema({
 	director: String,
 	time: RequiredString,
 	links: {
-		trailer: RequiredString,
+		trailer: String,
 		info: RequiredString
 	},
 	poster: RequiredString,
