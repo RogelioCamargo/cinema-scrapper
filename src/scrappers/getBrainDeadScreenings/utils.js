@@ -13,12 +13,16 @@ const getScreeningDetails = (
 	TITLE_SELECTOR, DIRECTOR_SELECTOR, DISCRIPTON_SELECTOR,
 	POSTER_SELECTOR, TIME_DATE_SELECTOR, TRAILER_SELECTOR
 ) => {
-	const title = document.querySelector(TITLE_SELECTOR).textContent;
-	const director = document.querySelector(DIRECTOR_SELECTOR).textContent;
-	const description = document.querySelector(DISCRIPTON_SELECTOR).textContent;
-	const showtime = document.querySelector(TIME_DATE_SELECTOR).textContent;
-	const poster = document.querySelector(POSTER_SELECTOR).getAttribute("src");
-	const trailer = document.querySelector(TRAILER_SELECTOR).getAttribute("href");
+	let title = document.querySelector(TITLE_SELECTOR)
+	title = title ? title.textContent : "TITLE NOT FOUND";
+	let director = document.querySelector(DIRECTOR_SELECTOR)
+	director = director ? director.textContent : "DIRECTOR NOT FOUND";
+	let description = document.querySelector(DISCRIPTON_SELECTOR)
+	description = description ? description.textContent : "DESCRIPTION NOT FOUND";
+	let showtime = document.querySelector(TIME_DATE_SELECTOR);
+	showtime = showtime ? showtime.textContent : "SHOWTIME NOT FOUND";
+	let poster = document.querySelector(POSTER_SELECTOR).getAttribute("src");
+	let trailer = document.querySelector(TRAILER_SELECTOR).getAttribute("href");
 
 	return { title, director, description, showtime, poster, trailer };
 };

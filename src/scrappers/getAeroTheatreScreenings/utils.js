@@ -42,12 +42,13 @@ const getScreeningDetails = (screeningUrl, selectors) => {
 		DOUBLE_SECOND_SELECTOR
 	} = selectors;
 
-	let title = document.querySelector(TITLE_SELECTOR).textContent;
+	let title = document.querySelector(TITLE_SELECTOR)
+	title = title ? title.textContent : "TITLE NOT FOUND";
 	let time = document.querySelector(TIME_SELECTOR);
-	if (time) time = time.textContent.replace(/\s/g, '');
+	time = time ? time.textContent.replace(/\s/g, '') : "TIME NOT FOUND";
 
 	let poster = document.querySelector(POSTER_SELECTOR);
-	if (poster) poster = poster.getAttribute("src");
+	poster = poster ? poster.getAttribute("src") : "POSTER NOT FOUND";
 	// get day
 	let date = document.querySelector(DATE_SELECTOR).textContent;
 	let indexOfComma = date.indexOf(","); // SUN JANUARY 9, 2022

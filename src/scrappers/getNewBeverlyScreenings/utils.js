@@ -26,13 +26,14 @@ const getScreeningDetails = (
 	const indexOfComma = date.indexOf(",");
 	const day = Number(date.slice(indexOfComma - 2, indexOfComma));
 
-	let title = screening.querySelector(TITLE_SELECTOR).textContent;
+	let title = screening.querySelector(TITLE_SELECTOR);
+	title = title ? title.textContent : "TITLE NOT FOUND";
 
 	let director = screening.querySelector(DIRECTOR_SELECTOR);
-	if (director) director = director.textContent;
+	director = director ? director.textContent : "DIRECTOR NOT FOUND";
 
-	let description = screening.querySelector(DESCRIPTION_SELECTOR).textContent;
-	// if (description) description = description.textContent;
+	let description = screening.querySelector(DESCRIPTION_SELECTOR)
+	description = description ? description.textContent : "DESCRIPTION NOT FOUND";
 
 	let poster = screening.querySelector(POSTER_SELECTOR).getAttribute("src");
 	let trailer = screening.querySelector(TRAILER_SELECTOR);
